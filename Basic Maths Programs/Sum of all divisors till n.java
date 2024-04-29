@@ -36,3 +36,27 @@ public class Sum_of_all_divisors_from_1_to_n {
         System.out.println(sumOfDivisors(n));
     }
 }
+//solution 2
+
+public class Solution {
+    public static int sum(int n){
+        int c=0;
+        for(int i=1;i*i<=n;i++){
+            if(n%i==0){
+                c+=i;
+                if(i!=n/i){
+                    c+=n/i;
+                }
+            }
+        }
+        return c;
+    }
+    public static int sumOfAllDivisors(int n){
+        // Write your code here.
+        int cnt=0;
+        for(int i=1;i<=n;i++){
+            cnt+=sum(i);
+        }
+        return cnt;
+    }
+}
